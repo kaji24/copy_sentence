@@ -1,0 +1,67 @@
+<header>
+
+</header>
+
+<body>
+<%= form_tag("/decide") do %>
+
+<h2>求職者の名前</h2>
+<input type="string" name="name">
+
+<h2>求職者の住所</h2>
+<input type="string" name="address" >
+
+<input type="submit" value="決定">
+
+<% end %>
+
+
+
+<h2>掘り起こし文章</h2>
+<div>
+  <textarea id="copyTarget" type="text" name="dig_sentence" rows="15" cols="80" readonly>
+  <%=@candidate.name%>様
+  突然のご連絡大変失礼いたします。
+  以前お仕事探しの件でお問い合わせを頂いておりましたきらケア介護の梶本と申します。
+  現状のお仕事探しのご状況いかがかなと思いご連絡いたしました。
+
+  現在<%=@candidate.name%>様のお住まいである<%=@candidate.address%>市内で介護士派遣の求人が出てきています。
+  ご転職をお考えであれば一度お話しさせて頂ければと思っております。
+  様のご都合が宜しければ、ご返信いただけますと幸いです。
+
+  きらケア梶本
+
+  </textarea>
+  <button onclick="copyToClipboard()">Copy text</button>
+
+</div>
+
+<body>
+
+
+
+    <!-- コピー対象要素とコピーボタン -->
+
+
+    <!-- bodyタグ内の下部に以下を入力する -->
+    <script>
+        function copyToClipboard() {
+            // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("copyTarget");
+
+            // コピー対象のテキストを選択する
+            copyTarget.select();
+
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+
+            // コピーをお知らせする
+            alert("コピーできました！ : " + copyTarget.value);
+        }
+    </script>
+</body>
+
+
+
+
+</body>
