@@ -80,11 +80,11 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
-  <<: *default
-  database: copy_sentence_production
-  username: copy_sentence
-  password: <%= ENV['COPY_SENTENCE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+#
+#production:
+#  <<: *default
+#  database: copy_sentence_production
+#  username: copy_sentence
+#  password: <%= ENV['COPY_SENTENCE_DATABASE_PASSWORD'] %>
