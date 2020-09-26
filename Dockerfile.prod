@@ -1,5 +1,6 @@
 FROM ruby:2.5
-RUN apt-get update && apt-get install -y \
+RUN apt-get update
+RUN apt-get install -y \
 		build-essential \
 		libpq-dev \
 		nodejs \
@@ -10,4 +11,4 @@ WORKDIR /copy_sentence
 COPY Gemfile Gemfile.lock /copy_sentence/
 RUN bundle install
 COPY . .
-CMD ["rails","s"]
+CMD ["rails", "s"]
