@@ -6,7 +6,7 @@ class CopyController < ApplicationController
       address: params[:address]
     )
     if @candidate.save
-      redirect_to("/sentence")
+      redirect_to("/")
     end
   end
 
